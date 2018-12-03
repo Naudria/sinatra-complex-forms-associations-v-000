@@ -16,7 +16,11 @@ class OwnersController < ApplicationController
       @owner.pets << Pet.create(name: params["pet"]["name"])
     end
     @owner.save
+<<<<<<< HEAD
     redirect "/owners/#{@owner.id}"
+=======
+    redirect "owners/#{@owner.id}"
+>>>>>>> 2dc5010ed581ce2b454fb9eab0955003f1ef6dd9
   end
 
   get '/owners/:id/edit' do 
@@ -31,10 +35,18 @@ class OwnersController < ApplicationController
 
   post '/owners/:id' do 
     @owner = Owner.find(params[:id])
+<<<<<<< HEAD
     @owner.update(params[:owner])
     if !params["pet"]["name"].empty?
       @owner.pets << Pet.create(name: params["pet"]["name"])
     end
     redirect to "owners/#{@owner.id}"
+=======
+    @owner.update(params["owner"])
+    if !params["pet"]["name"].empty?
+      @owner.pets << Pet.create(name: params["pet"]["name"])
+    end
+    redirect "owners/#{@owner.id}"
+>>>>>>> 2dc5010ed581ce2b454fb9eab0955003f1ef6dd9
   end
 end
